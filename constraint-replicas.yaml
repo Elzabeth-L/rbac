@@ -6,7 +6,5 @@ spec:
   enforcementAction: deny
   match:
     kinds:
-    - apiGroups: ["apps"]
-      kinds: ["Deployment"]
     - apiGroups: [""]
       kinds: ["Pod"]
