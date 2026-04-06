@@ -13,7 +13,8 @@ spec:
       package k8srequiredimagetag
 
       violation[{"msg": msg}] {
-        container := input.review.object.spec.containers[_]
+        containers := input.review.object.spec.template.spec.containers
+        container := containers[_]
         endswith(container.image, ":latest")
         msg := "Using latest tag is not allowed"
       }
