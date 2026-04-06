@@ -1,0 +1,19 @@
+apiVersion: templates.gatekeeper.sh/v1beta1
+kind: ConstraintTemplate
+metadata:
+  name: k8sreplicas
+spec:
+  crd:
+    spec:
+      names:
+        kind: K8sReplicas
+  targets:
+  - target: admission.k8s.gatekeeper.sh
+    rego: |
+      package k8sreplicas
+
+      violation[{"msg": msg}] {
+        replicas := input.review.object.spec.replicas
+        replicas < 2
+        msg := sprintf("Replicas must be at least 2, but got %v", [replicas])
+      }
