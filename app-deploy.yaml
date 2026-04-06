@@ -41,7 +41,7 @@ spec:
         #         operator: NotIn
         #         values:
         #         - test
-        podAntiAffinity:
+        podAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
           - labelSelector:
               matchLabels:
