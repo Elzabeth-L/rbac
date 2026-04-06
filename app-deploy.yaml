@@ -50,9 +50,9 @@ spec:
         #           app: fitness-tracker-app
         #       topologyKey: "kubernetes.io/hostname"
       tolerations:
-      - key: "training"
+      - key: "env"
         operator: "Equal"
-        value: "test"
+        value: "production"
         effect: "NoSchedule"
       containers:
         - name: fitness-tracker-app
