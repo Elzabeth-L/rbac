@@ -56,7 +56,7 @@ spec:
         effect: "NoSchedule"
       containers:
         - name: fitness-tracker-app
-          image: pulkit197/fitness_tracker-master-copy3-fitness-app:latest
+          image: pulkit197/fitness_tracker-master-copy3-fitness-app:23
           ports:
             - containerPort: 5000
           resources:
