@@ -5,6 +5,11 @@ metadata:
 spec:
   enforcementAction: deny
   match:
+    excludedNamespaces:
+    - kube-system
+    - gatekeeper-system
+    - kyverno
+    - kube-public
     kinds:
     - apiGroups: ["apps"]
       kinds: ["Deployment"]
