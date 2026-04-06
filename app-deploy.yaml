@@ -36,9 +36,6 @@ spec:
             limits:
               memory: "512Mi"
               cpu: "200m"
-          envFrom:
-            - configMapRef:
-                name: fitness-configmap
           env:
             # Datadog APM (tracing) env variables
             - name: DD_AGENT_HOST
